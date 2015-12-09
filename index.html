@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<head>
+  <script type="text/javascript" src="jquery_implementation.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="card_container">
+    <div class="card">
+      <p>Roger Federer</p>
+    </div>
+    <div class="card">
+      <p>Rafael Nadal</p>
+    </div>
+    <div class="card">
+      <p>Novak Djokovic</p>
+    </div>
+    <div class="card">
+      <p>Andy Murray</p>
+    </div>
+    <div class="card">
+      <p>Stan Wawrinka</p>
+    </div>
+    <div class="card">
+      <p>Tomas Berdych</p>
+    </div>
+    <div class="card">
+      <p>Marin Cilic</p>
+    </div>
+    <div class="card">
+      <p>Grigor Dimitrov</p>
+    </div>
+    <div class="card">
+      <p>Jerzy Janowicz</p>
+    </div>
+    <div class="card">
+      <p>Kei Nishikori</p>
+    </div>
+  </div>
+
+  <div class="like_dislike_bar">
+    <div class="dislike_button">
+      <p>Dislike</p>
+    </div>
+    <div class="like_button">
+      <p>Like</p>
+    </div>
+  </div>
+
+  <div class="search_container">
+    <p id="search"> Search Matches </p>
+    <input class="search"></input>
+  </div>
+
+  <div class="liked_users">
+  </div>
+  <script>
+    var disliked = function(){
+      var $firstPhoto = j('.card:first-child');
+      $firstPhoto.addClass('disliked_card');
+      window.setTimeout(function () {
+        $firstPhoto.remove();
+      }, 1000);
+    };
+
+    var liked = function(){
+      var $firstPhoto = j('.card:first-child');
+      $firstPhoto.addClass('liked_card');
+      window.setTimeout(function () {
+        j('.liked_users').append( $firstPhoto.html() );
+        j('.liked_users p:last-child').attr( "name", $firstPhoto.text());
+        $firstPhoto.remove();
+      }, 1000);
+    };
+
+    var search = function(){
+      selector = 'p[name="' + event.target.value + '"]'
+      if (j('.liked_users').children().find(selector).length() > 0) {
+        j('.liked_users').children().find(selector).backgroundColor("yellow");
+      }
+    };
+
+  j(function(){
+    j('.dislike_button').on('click', disliked);
+    j('.like_button').on('click', liked);
+    j('.search').on('input', search);
+  });
+  </script>
+</body>
+</html>

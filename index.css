@@ -1,0 +1,55 @@
+.card, .disliked_card, .liked_card{
+    text-align: center;
+}
+
+.card {
+  background: orange;
+}
+
+.disliked_card {
+  background: red !important;
+}
+
+.liked_card {
+  background: green !important;
+}
+
+.like_dislike_bar {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.like_button, .dislike_button {
+    width: 9%;
+    border-radius: 50%;
+
+}
+
+.dislike_button {
+    background: red;
+    float: left;
+    margin-left: 35%;
+}
+
+.like_button {
+    background: green;
+    float: right;
+    margin-right: 35%;
+}
+
+p {
+    color: white;
+}
+
+.liked_users p {
+  text-align: center;
+  color: black;
+}
+
+.search_container {
+  text-align: center;
+}
+
+#search {
+  color: black;
+}
