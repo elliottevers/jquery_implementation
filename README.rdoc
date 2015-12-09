@@ -1,0 +1,2 @@
+This is my minimal implementation of jquery using the DOM's API.  To test it out,
+paste the file path of index.html in the browser.
