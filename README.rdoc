@@ -1,2 +1,1 @@
-This is my minimal implementation of jquery using the DOM's API.  To test it out,
-paste the file path of index.html in the browser.
+This is a proof-of-concept that some of the fundamental behavior of jQuery can be implemented with vanilla javascript and the DOM's API. 
